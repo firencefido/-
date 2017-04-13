@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+    *{
+    	margin: 0;
+    	padding: 0;
+    }
+    a{
+        text-decoration: none;
+    }
+    img{
+        border: none;
+    }
+    ul{
+    	list-style: none;
+    }
+    .show{
+    	width: 430px;
+    	height: 430px;
+    	border: 1px solid #F3F3F3;
+    	margin: 50px auto;
+    	background:url("images/1.jpg");
+    }
+    .list{
+    	width: 430px;
+    	margin: 0 auto;
+    }
+    .list img{
+    	width: 86px;
+    	height: 86px;
+    	/*border:1px solid red;*/
+    }
+    li{
+    	float: left;
+    	padding-right: 15px;
+    }
+    </style>
+</head>
+<body>
+	<div id="show_pic" class="show"></div>
+	<div id="pic_list" class="list">
+		<ul>
+			<li><a href="javascript:;"><img src="images/1.jpg" alt="1.jpg"></a></li>
+			<li><a href="javascript:;"><img src="images/2.jpg" alt="2.jpg"></a></li>
+			<li><a href="javascript:;"><img src="images/3.jpg" alt="3.jpg"></a></li>
+			<li><a href="javascript:;"><img src="images/4.jpg" alt="4.jpg"></a></li>
+		</ul>
+	</div>
+	<script>
+		var aImg=document.getElementById('pic_list').getElementsByTagName('img');
+		var oDiv=document.getElementById('show_pic');
+		var imgArr=['images/1.jpg','images/2.jpg','images/3.jpg','images/4.jpg'];
+		for(var i=0;i<aImg.length;i++){
+			aImg[i].index=i;
+			aImg[i].onmouseover=function(){
+				oDiv.style.background="url("+imgArr[this.index]+")";
+				this.style.border="1px solid red";
+			}
+			aImg[i].onmouseout=function(){
+				this.style.border="";
+			}
+		}
+	</script>
+</body>
+</html>

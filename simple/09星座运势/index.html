@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="utf-8"/>
+    <title></title>
+    <style>
+        *{
+          margin: 0;
+          padding: 0;
+        }
+        .box{
+          width: 350px;
+          height: 250px;
+          margin:100px auto;
+          border: 1px solid #ccc;
+        }
+        .top{
+          padding-left: 10px;
+          line-height: 35px;
+          font-weight: bold;
+          color: #036;
+        }
+        #icon{
+          width: 50px;
+          height: 50px;
+          background:url("images/Icon.png") no-repeat 10px 0;
+          padding:0 20px 0 10px;
+          float:left;
+        }
+        /*清除浮动方法一*/
+        /* .mid{
+          overflow:hidden;
+          *zoom:1;
+        }  */
+
+        /*清除浮动方法二*/
+        .clearfix:after{
+           content:'';
+           display:block;
+           clear:both;
+        }
+        .clearfix{
+         *zoom:1;
+        } 
+        .yunshi{
+          width: 80px;
+          height: 13px;
+          display: inline-block;
+          background:url("images/yunshi.png") no-repeat;
+          position: relative;
+        }
+        .star{
+          height: 13px;
+          /*width: 40px;*/
+          background:url("images/yunshi.png") no-repeat left bottom;
+          position: absolute;
+          left: 0;
+          top: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+      <div class="top">星座运势</div>
+      <div class="mid clearfix">
+        <div id="icon"></div>
+        <div class="right">
+          <select name="" id="sec_list">
+            <option value="0">白羊座 03.21-04.19</option>
+            <option value="1">金牛座 04.20-05.29</option>
+            <option value="2">双子座 04.20-05.29</option>
+          </select>
+          <div class="" >今日运势：
+            <span class="yunshi">
+              <span class="star" id="star"></span>
+            </span>
+          </div>
+        </div>
+      </div>
+      <div class="bottom" id="content">
+        这几天的财运都很强，但是危机总在不知不觉之中发生了，例如：因为太过乐观而误判情势，导致投...[详细]
+      </div>
+    </div>
+	<script>
+    var oIcon=document.getElementById('icon');
+    var star=document.getElementById('star');
+		var oSelect=document.getElementById('sec_list');
+    var content=document.getElementById('content');
+        //alert(aSelect.value);
+        var arrText=["受到财帛宫内行星不利相位的影响，部份的人花钱较不节制，经常一不小心就把信用卡刷爆了，除此之...",
+        "最近你的学习能力相当好，领悟力也很高，可以在很短的时间内就对新的业务内容有通盘的了解，所以.",
+        "或许最近有些心事困扰着你，让你今天工作起来相当无力，甚至有些心不在焉，如果忙碌了一段时间后.."];
+        var arrWidth=[5,10,3];
+        oSelect.onchange=function (){
+            oIcon.style.backgroundPosition="10px "+(-this.value*50)+"px";
+            content.innerHTML=arrText[this.value];
+            star.style.width=8*arrWidth[this.value]+"px";
+        }
+	</script>
+</body>
+</html>

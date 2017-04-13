@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+    *{
+    	margin: 0;
+    	padding: 0;
+    }
+    a{
+        text-decoration: none;
+    }
+    input{
+        background: none;
+        border: none;
+        outline: none;
+    }
+    img{
+        border: none;
+    }
+    ul{
+    	list-style: none;
+    }
+    .form{
+        margin: 23px auto;
+        width: 430px;
+        position: relative;
+    }
+    #key{
+        background-color: #FFF;
+        width: 338px;
+        height: 35px;
+        line-height: 35px\9;
+        padding: 0 10px;
+        border:1px solid #B61D1D;
+        float:left;
+        color: #000;
+    }
+    .form #label{
+        position: absolute;
+        top: 10px;
+        left: 20px;
+        font-size: 12px;
+        cursor: text; /*文本*/
+        color: #ccc;
+        /* 解决Firefox/Opera不支持onselectstart事件 */
+        -moz-user-select:none;
+    }
+    #search{
+        width: 70px;
+        height: 37px;
+        background-color: #F52B00;
+        font-size: 18px;
+        color: #FFF;
+    }
+    </style>
+</head>
+<body>
+	<div class="form" id="form">
+        <input id="key" name="text1" type="text" > 
+        <label for="text1" id="label">准备好棉被过冬</label>  
+        <input id="search" type="button" value="搜索">
+    </div>
+	<script>
+		var oText=document.getElementById('key');
+        var oLabel=document.getElementById('label');
+        oText.focus();
+        oLabel.onclick=function(){
+            oText.focus();
+        }
+        /* 阻止label文字被选中问题 */
+        oLabel.onselectstart=function(){
+            return false;
+        }
+
+        oText.oninput=oText.onpropertychange=function (){
+            if(oText.value==""){
+                oLabel.style.display="block";
+            }else{
+                oLabel.style.display="none";
+            }
+        }
+
+        
+	</script>
+</body>
+</html>

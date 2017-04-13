@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        * {
+       		margin:0;
+        	padding: 0;
+        }
+        body{
+        	background:url("images/1.jpg");
+        }
+        .mask{
+        	width: 100%;
+        	height: 200px;
+        	background: rgba(255,255,255,0.3);/* IE8 “‘œ¬≤ªºÊ»› */
+        	text-align: center;
+        }
+        .mask img{
+        	width: 200px;
+        	margin-top: 35px;
+        	cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<div class="mask">
+    <img src="images/1.jpg" alt="" id="pic1"/>
+    <img src="images/2.jpg" alt="" id="pic2" />
+    <img src="images/3.jpg" alt="" id="pic3"/>
+</div>
+	<script>
+		var aImg=document.getElementsByTagName('img');
+		var imgArr=['images/1.jpg','images/2.jpg','images/3.jpg']
+		for(var i=0;i<aImg.length;i++){
+			aImg[i].index=i;
+			aImg[i].onclick=function (){
+				document.body.style.background="url("+imgArr[this.index]+")";
+			}
+		}
+	</script>
+</body>
+</html>
+<script>
+</script>

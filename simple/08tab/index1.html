@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>广告</title>
+	<style>
+	*{
+		margin:0;
+		padding :0;
+	}
+	.box{
+		width: 332px;
+		height: 245px;
+		border: 1px solid #ccc;
+	}
+	ul{
+		list-style:none;
+		overflow:hidden;
+		zoom:1;
+	}
+	a{
+		text-decoration: none;
+		color: #616872;
+	}
+	li{
+		font-size: 16px;
+		font-family: "黑体";
+		width: 110px;
+		height: 40px;
+		line-height: 40px;
+		float: left;
+		background: #f9f9f9;
+		text-align: center;
+		border-right:1px solid #ccc;
+		border-bottom:1px solid #ccc;
+	}
+	.box li.first{
+		background: #fff;
+		border-bottom:0;
+	}
+	.box div{
+		display: none;
+	}
+	.box div.first{
+		margin:10px auto;
+		width: 292px;
+		display: block;
+	}
+	</style>
+</head>
+<body>
+	<div class="box" id="box">
+		<ul id="list">
+			<li class="first"><a href="#">去大肚子</a></li>
+			<li><a href="#">清除色斑</a></li>
+			<li style="border-right:0;"><a href="#">男性减肥</a></li>
+		</ul>
+		<div class="first">
+			<a href="#"><img src="images/img1.jpg" alt=""></a>
+		</div>
+		<div>
+			<a href="#"><img src="images/img2.jpg" alt=""></a>
+		</div>
+		<div>
+			<a href="#"><img src="images/img3.jpg" alt=""></a>
+		</div>
+	</div>
+	<script>
+		var oDiv=document.getElementById('box');
+		var aLi=document.getElementById('list').getElementsByTagName('li');
+		var aDiv=oDiv.getElementsByTagName('div');
+		for(var i=0;i<aLi.length;i++){
+			aLi[i].index=i;
+			aLi[i].onmouseover=function(){
+				for(var i=0;i<aDiv.length;i++){
+					aLi[i].className="";
+					aDiv[i].className="";
+				}
+				this.className="first";
+				aDiv[this.index].className="first";
+			}
+		}
+	</script>
+</body>
+</html>

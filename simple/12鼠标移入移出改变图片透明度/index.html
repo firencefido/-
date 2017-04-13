@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	*{
+		margin: 0;
+		padding: 0;
+	}
+	ul{
+		list-style: none;
+		width: 700px;
+		padding:0 0 10px 10px;
+		margin: 100px auto;
+		border: 1px solid #ccc;
+		overflow: hidden;
+		zoom:1;/* 父级清除浮动 */
+	}
+	li{
+		width: 128px;
+		height: 128px;
+		border: 1px solid #ccc;
+		margin:10px 10px 0 0;
+		float: left;
+	}
+	li img{
+		opacity:0.3;
+	}
+	.current{
+		opacity:1;
+		cursor: pointer;
+	}
+	</style>
+</head>
+<body>
+		<ul class="list">
+			<li><img src="images/1.jpg" alt=""></li>
+			<li><img class="" src="images/2.jpg" alt=""></li>
+			<li><img src="images/3.jpg" alt=""></li>
+			<li><img src="images/4.jpg" alt=""></li>
+			<li><img src="images/5.jpg" alt=""></li>
+			<li><img src="images/6.jpg" alt=""></li>
+			<li><img src="images/7.jpg" alt=""></li>
+			<li><img src="images/8.jpg" alt=""></li>
+			<li><img src="images/9.jpg" alt=""></li>
+			<li><img src="images/10.jpg" alt=""></li>
+		</ul>
+	<script>
+		var oUl=document.getElementsByTagName('ul')[0];
+		var aLi=oUl.getElementsByTagName('li');
+		var aImg=oUl.getElementsByTagName('img');
+		for(var i=0;i<aImg.length;i++){
+			aImg[i].onmouseover=function(){
+				this.className="current";
+			}
+			aImg[i].onmouseout=function(){
+				this.className="";
+			}
+		}
+	</script>
+</body>
+</html>

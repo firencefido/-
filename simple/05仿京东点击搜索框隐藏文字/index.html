@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+    *{
+    	margin: 0;
+    	padding: 0;
+    }
+    a{
+        text-decoration: none;
+    }
+    input{
+        background: none;
+        border: none;
+        outline: none;
+    }
+    img{
+        border: none;
+    }
+    ul{
+    	list-style: none;
+    }
+    .form{
+        margin: 23px auto;
+        width: 430px;
+    }
+    #key{
+        background-color: #FFF;
+        width: 348px;
+        height: 35px;
+        line-height: 35px\9;
+        padding: 0 5px;
+        border:1px solid #B61D1D;
+        float:left;
+        color: #333;
+    }
+    #search{
+        width: 70px;
+        height: 37px;
+        background-color: #B61D1D;
+        color: #FFF;
+    }
+    </style>
+</head>
+<body>
+	<div class="form" id="form">
+        <input id="key" name="text1" type="text" >   
+        <input id="search" type="button" value="搜索">
+    </div>
+	<script>
+		var oText=document.getElementById('key');
+        var textArr=['双十一优惠','iphone 7','小米5s','服饰','路由器','Apple Watch','小米手环2','新品','低至5折','凑数的','10'];
+        //oText.value="双十一优惠";
+        var num=Math.round(Math.random()*10);
+        oText.value=""+textArr[num];
+        oText.onfocus=function(){
+            if(oText.value==textArr[num]){
+                oText.value="";
+            } 
+        }
+        oText.onblur=function(){
+            if(oText.value==""){
+                oText.value=""+textArr[num];
+            } 
+        }
+	</script>
+</body>
+</html>

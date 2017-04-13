@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="utf-8"/>
+    <title></title>
+    <style>
+        body{
+        	background:url("images/chun1.jpg");
+          background-size: cover;
+          -moz-background-size: cover;
+        }
+    </style>
+</head>
+<body>
+    <select name="" id="sec_list">
+        <option value="chun">春意盎然</option>
+        <option value="xia">夏日炎炎</option>
+        <option value="qiu">秋风瑟瑟</option>
+        <option value="dong">冬雪皑皑</option>
+    </select>
+	<script>
+		var oSelect=document.getElementById('sec_list');
+        //alert(aSelect.value);
+        oSelect.onchange=function (){
+            switch(this.value){
+                case 'chun':
+                   document.body.style.background="url(images/chun1.jpg)";
+                   break;
+                case 'xia':
+                   document.body.style.background="url(images/xia1.jpg)";
+                   break;
+                case 'qiu':
+                   document.body.style.background="url(images/qiu1.jpg)";
+                   break;
+                case 'dong':
+                   document.body.style.background="url(images/dong1.jpg)";
+                   break;
+            }
+        }
+	</script>
+</body>
+</html>
